@@ -13,7 +13,7 @@ function Find() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const { data } = await axios.get('http://localhost:4000/api/getLostItems');
+        const { data } = await axios.get('https://lost-and-find.onrender.com/api/getLostItems');
         setItems(data);
         setLoading(false);
       } catch (error) {
@@ -80,7 +80,7 @@ function Find() {
               <div key={item._id} className="bg-white rounded-lg shadow-md overflow-hidden">
                 {item.images && item.images.length > 0 && (
                   <img
-                    src={`http://localhost:4000/uploads/${item.images[0]}`}
+                    src={`https://lost-and-find.onrender.com/uploads/${item.images[0]}`}
                     alt={item.productName}
                     className="w-full h-48 object-cover"
                   />
