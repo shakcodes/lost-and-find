@@ -10,7 +10,7 @@ if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
 
-// ✅ CREATE Lost Item
+// CREATE Lost Item
 export const lost = async (req, res) => {
   try {
     console.log('Request files:', req.files);
@@ -79,7 +79,7 @@ export const lost = async (req, res) => {
   }
 };
 
-// ✅ READ all items (Admin or global display)
+// READ all items (Admin or global display)
 export const getLostItems = async (req, res) => {
   try {
     const items = await Lost.find().sort({ createdAt: -1 });
@@ -90,7 +90,7 @@ export const getLostItems = async (req, res) => {
   }
 };
 
-// ✅ READ items by logged-in user
+// READ items by logged-in user
 export const getLostItemsByUserId = async (req, res) => {
   const userId = req.params.userId;
   try {
@@ -105,7 +105,7 @@ export const getLostItemsByUserId = async (req, res) => {
   }
 };
 
-// ✅ UPDATE Lost Item (only by owner)
+// UPDATE Lost Item (only by owner)
 export const updateLostItem = async (req, res) => {
   try {
     const item = await Lost.findById(req.params.id);
@@ -127,7 +127,7 @@ export const updateLostItem = async (req, res) => {
   }
 };
 
-// ✅ DELETE Lost Item (only by owner)
+// DELETE Lost Item (only by owner)
 export const deleteLostItem = async (req, res) => {
   try {
     const item = await Lost.findById(req.params.id);
