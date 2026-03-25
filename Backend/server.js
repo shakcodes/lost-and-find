@@ -11,11 +11,11 @@ import lostItemRoutes from './Routes/findLostRoute.js';
 import uploadRoutes from './Routes/uploadRoute.js'; // Add this line
 
 import connectDB from './Config/dbConfig.js';
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
