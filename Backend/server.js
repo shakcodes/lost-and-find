@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 import authRouter from './Routes/authRoute.js';
 import profileRoutes from './Routes/profileRoute.js';
 import lostItemRoutes from './Routes/findLostRoute.js';
-import uploadRoutes from './Routes/uploadRoute.js'; // ✅ Add this line
+import uploadRoutes from './Routes/uploadRoute.js'; // Add this line
 
 import connectDB from './Config/dbConfig.js';
 
@@ -32,7 +32,7 @@ app.use(express.json());
 app.use('/auth', authRouter);
 app.use('/api', lostItemRoutes);
 app.use('/api/profile', profileRoutes);
-app.use('/api/upload', uploadRoutes); // ✅ Add this route
+app.use('/api/upload', uploadRoutes); // Add this route
 app.use('/api', lostItemRoutes);
 // Serve static uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -40,6 +40,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Start server
 mongoose.connection.once('open', () => {
   app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
   });
 });
