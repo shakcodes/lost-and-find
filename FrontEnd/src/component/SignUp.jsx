@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
-  const [name, setName] = useState(''); // 👈 Added name
+  const [name, setName] = useState(''); // Added name
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ function SignUp() {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:4000/auth/signup', {
-        name, // 👈 send name too
+        name, // send name too
         email,
         password,
       });
