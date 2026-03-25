@@ -105,7 +105,7 @@ function Lost() {
         form.append('images', image);
       });
 
-      const response = await axios.post('http://localhost:4000/api/lost', form, {
+      const response = await axios.post('https://lost-and-find.onrender.com/api/lost', form, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
