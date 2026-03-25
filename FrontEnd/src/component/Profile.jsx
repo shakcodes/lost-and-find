@@ -34,7 +34,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/profile/${userId}`, {
+        const res = await axios.get(`https://lost-and-find.onrender.com/api/profile/${userId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setProfile(res.data);
@@ -48,7 +48,7 @@ const Profile = () => {
 
     const fetchUserItems = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/user/${userId}/items`, {
+        const res = await axios.get(`https://lost-and-find.onrender.com/api/user/${userId}/items`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setMyItems(res.data);
@@ -77,7 +77,7 @@ const Profile = () => {
     formData.append('avatar', file);
 
     try {
-      const res = await axios.post('http://localhost:4000/api/upload', formData, {
+      const res = await axios.post('https://lost-and-find.onrender.com/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`
@@ -95,7 +95,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:4000/api/profile/${userId}`, profile, {
+      const res = await axios.put(`https://lost-and-find.onrender.com/api/profile/${userId}`, profile, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProfile(res.data);
@@ -113,7 +113,7 @@ console.log(myItems);
 
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:4000/api/lost/${selectedItemId}`, {
+      await axios.delete(`https://lost-and-find.onrender.com/api/lost/${selectedItemId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMyItems(prev => prev.filter(item => item._id !== selectedItemId));
@@ -206,7 +206,7 @@ console.log(myItems);
         </p>
         {item.images?.length > 0 && (
           <img
-            src={`http://localhost:4000/uploads/${item.images[0]}`}
+            src={`https://lost-and-find.onrender.com/uploads/${item.images[0]}`}
             alt={item.productName}
             className="w-full h-40 object-cover rounded-md mb-3"
           />
