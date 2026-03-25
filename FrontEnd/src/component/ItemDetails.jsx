@@ -11,7 +11,7 @@ const ItemDetails = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const { data } = await axios.get('http://localhost:4000/api/getLostItems');
+        const { data } = await axios.get('https://lost-and-find.onrender.com/api/getLostItems');
         const selectedItem = data.find((itm) => itm._id === id);
         setItem(selectedItem || null);
         setLoading(false);
