@@ -11,7 +11,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/auth/signup', {
+      const response = await axios.post('https://lost-and-find.onrender.com/auth/signup', {
         name, // send name too
         email,
         password,
