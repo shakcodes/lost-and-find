@@ -24,7 +24,7 @@ const EditItem = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/lost/${id}`, {
+        const res = await axios.get(`https://lost-and-find.onrender.com/api/lost/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setItemData(res.data);
@@ -46,7 +46,7 @@ const EditItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:4000/api/lost/${id}`, itemData, {
+      await axios.put(`https://lost-and-find.onrender.com/api/lost/${id}`, itemData, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMessage('Item updated successfully');
