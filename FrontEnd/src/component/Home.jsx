@@ -8,7 +8,7 @@ function Home() {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get('http://localhost:4000/api/getLostItems');
+        const res = await axios.get('https://lost-and-find.onrender.com/api/getLostItems');
         setLostItems(res.data.reverse().slice(0, 6)); // show latest 6
       } catch (err) {
         console.error("Failed to load lost items", err);
@@ -65,7 +65,7 @@ function Home() {
               >
                 {item.images?.[0] && (
                   <img
-                    src={`http://localhost:4000/uploads/${item.images[0]}`}
+                    src={`https://lost-and-find.onrender.com/uploads/${item.images[0]}`}
                     alt={item.productName}
                     className="h-40 w-full object-cover rounded mb-2"
                   />
