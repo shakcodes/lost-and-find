@@ -129,7 +129,7 @@ function Lost() {
       setImages([]);
       
       // Redirect after success
-      setTimeout(() => navigate('/dashboard'), 2000);
+      setTimeout(() => navigate('/Home'), 2000);
     } catch (error) {
       console.error('Error:', error);
       const errorMessage = error.response?.data?.message || 
